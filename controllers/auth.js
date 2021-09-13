@@ -61,6 +61,7 @@ export const login = async (req, res) => {
     res.cookie('token', token, {
       httpOnly: true,
       sameSite: 'none',
+      secure: process.env.NODE_ENV === 'production',
       maxAge: 3600000,
     });
 
@@ -79,6 +80,7 @@ export const logout = (_, res) => {
   res.cookie('token', '', {
     httpOnly: true,
     sameSite: 'none',
+    secure: process.env.NODE_ENV === 'production',
     maxAge: 1,
   });
 
