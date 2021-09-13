@@ -60,7 +60,7 @@ export const login = async (req, res) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      SameSite: 'none',
+      sameSite: 'none',
       maxAge: 3600000,
     });
 
@@ -78,7 +78,7 @@ export const me = (req, res) => {
 export const logout = (_, res) => {
   res.cookie('token', '', {
     httpOnly: true,
-    SameSite: 'none',
+    sameSite: 'none',
     maxAge: 1,
   });
 
