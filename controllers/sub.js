@@ -134,7 +134,7 @@ export const uploadSubImage = async (req, res) => {
     }
 
     if (oldImageUrn !== '') {
-      fs.unlinkSync(`upload\\images\\${oldImageUrn}`);
+      fs.unlinkSync(`upload/images/${oldImageUrn}`);
     }
 
     return res.json({ success: true });
