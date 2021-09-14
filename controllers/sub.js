@@ -107,7 +107,7 @@ export const uploadSubImage = async (req, res) => {
   const sub = await Sub.findById(req.sub._id);
   try {
     const type = req.body.type;
-    // console.log(req.file);
+    // console.log('file',req.file);
 
     if (type !== 'image' && type !== 'banner') {
       fs.unlinkSync(req.file.path);
@@ -140,7 +140,7 @@ export const uploadSubImage = async (req, res) => {
     return res.json({ success: true });
   } catch (err) {
     console.log(err);
-    return res.status(500).json({ error: 'Something went wrong' });
+    return res.status(500).json({ error: err });
   }
 };
 
